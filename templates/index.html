@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Sleuth</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Review Sleuth</h1>
+        <form action="/" method="post">
+            <label for="review_text">Enter your review:</label><br>
+            <textarea id="review_text" name="review_text" rows="4" cols="93.7%"></textarea><br><br>
+            <input type="submit" value="Submit">
+            <button type="button" id="reset-button">Reset</button>
+        </form>
+        <div class="result-container" id="result-container">
+            <h2>Predictions</h2>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Review Text</th>
+                        <th>Sentiment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for review, sentiment in predictions %}
+                        <tr class="{% if sentiment == 'positive' %}positive{% else %}negative{% endif %}">
+                            <td>{{ review }}</td>
+                            <td>{{ sentiment }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Function to clear the container and session data
+        function clearContainer() {
+            var container = document.getElementById("result-container");
+            container.innerHTML = ""; // Remove all child elements
+            
+            // Send AJAX request to clear session data
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/clear_session", true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Session data cleared successfully
+                    console.log("Session data cleared");
+                }
+            };
+            xhr.send();
+        }
+    
+        // Attach event listener to reset button
+        document.getElementById("reset-button").addEventListener("click", clearContainer);
+    </script>
+</body>
+</html>

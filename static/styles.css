@@ -1,0 +1,119 @@
+/* styles.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ea; /* Light green background */
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto; /* Added some margin for spacing */
+    padding: 20px;
+    background-color: #fff; /* White background for container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+}
+
+/* Heading styles */
+h1 {
+    color: #004B49; /* Adjusted heading color */
+    text-align: center; /* Center align heading */
+}
+
+h2 {
+    color: #004B49; /* Adjusted heading color */
+    text-align: center; /* Center align heading */
+}
+
+/* Form styles */
+form {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd; /* Border around the form */
+}
+
+/* Input styles */
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit button styles */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #8FBC8F; /* Light green */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #4cae4c; /* Darker shade of green */
+}
+
+/* Reset button styles */
+button[type="button"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #ccc; /* Light gray */
+    color: #333; /* Dark gray */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="button"]:hover {
+    background-color: #bbb; /* Slightly darker shade of gray */
+}
+
+/* Result styles */
+.result-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.result-table th,
+.result-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.result-table th {
+    background-color: #5cb85c; /* Light green for table header */
+    color: #fff;
+}
+
+/* Additional styling for matched portions */
+.matched {
+    color: #25B220; /* Adjusted color for matched portions */
+    font-weight: bold; /* Bold font for matched portions */
+}
+
+/* Positive sentiment row styling */
+.positive {
+    background-color: #DFF0D8; /* Light green background for positive sentiment */
+}
+
+/* Negative sentiment row styling */
+.negative {
+    background-color: #F2DEDE; /* Light red background for negative sentiment */
+}
