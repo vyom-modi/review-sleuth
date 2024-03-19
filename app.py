@@ -13,7 +13,9 @@ app.secret_key = 'irl'
 model = joblib.load('best_models/naive_bayes.pkl')
 
 # Preprocess text function
+nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 
 def preprocess_text(text):
