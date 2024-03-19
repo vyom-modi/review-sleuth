@@ -45,6 +45,16 @@ input[type="text"] {
     border-radius: 4px;
 }
 
+textarea {
+    width: 100%; /* Make the textarea occupy the full width of its container */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+
 /* Submit button styles */
 input[type="submit"] {
     width: 100%;
